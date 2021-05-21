@@ -1,20 +1,23 @@
 #!/bin/bash
 # Author: Eliza
-# Date
-# Desc:
-a=`hostname`
-echo Hello, my server name $a
+# Date: 05/21/2021
 echo
-echo What is your name?
-read b
+echo "This scipt will run basic administrative commands!"
 echo
-echo What is your profession?
-read c
-echo
-echo What is your favorite show?
-read d
-echo
-echo Hello $b
-echo Your profession $c is awesome.
-echo And $d is a good show.
-echo
+h="$(hostname)"
+uptime="$(uptime)"
+df="$(df -hTP)"
+memory="$(free -h)"
+
+# echo -e "$h\n\n$df\n\n$memory"  #another option will print the same thing as below, but without specifying hostname/uptime/disk free/memory
+
+echo  "hostname: $h
+
+uptime: 
+$uptime
+
+disk free: 
+$df
+
+memory: 
+$memory" 
